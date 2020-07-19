@@ -1,6 +1,7 @@
 import os, time, pickle
 from flask import Flask, jsonify
 from flask_restful import reqparse
+from flask_cors import CORS
 # from sklearn.feature_extraction.text import CountVectorizer
 # from sklearn.feature_extraction.text import TfidfTransformer
 # from sklearn.naive_bayes import MultinomialNB
@@ -25,6 +26,7 @@ def predictSentiment(phrases: list):
 
 
 app = Flask('liveSentiment')
+CORS(app)
 
 
 @app.route('/sentiment')
