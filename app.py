@@ -35,7 +35,7 @@ def sentiment():
     parser.add_argument('phrase', type=str, required=True, help="Provide a phrase to rate", action='append')
     args = parser.parse_args()
     phrase = args['phrase']
-    return predictSentiment(phrase)
+    return jsonify({"phrases": [predictSentiment(phrase)]})
 
 
 
